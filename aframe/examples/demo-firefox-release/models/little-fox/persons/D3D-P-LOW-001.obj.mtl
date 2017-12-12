@@ -1,0 +1,14 @@
+# File produced by Open Asset Import Library (http://www.assimp.sf.net)
+# (assimp v3.1.187496374)
+
+newmtl D3D-P-LOW-001-material
+Kd 0.6 0.6 0.6
+Ka 0 0 0
+Ks 0.1 0.1 0.1
+Ke 0 0 0
+Ns 50
+illum 2
+map_Kd ./images/D3D-P-LOW-001c.jpg
+bump ./images/D3D-P-LOW-001b.jpg
+map_bump ./images/D3D-P-LOW-001b.jpg
+

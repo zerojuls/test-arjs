@@ -1,0 +1,45 @@
+<head>
+    <title>Check gyroscope in device</title>
+    <!-- include a-frame -->
+    
+</head>
+
+<!-- start the body of your page -->
+<body >
+
+</body>
+<!--<script>
+
+
+	var gyroPresent = false;
+	window.addEventListener("devicemotion", function(event){
+		if(event.rotationRate.alpha || event.rotationRate.beta || event.rotationRate.gamma)
+			gyroPresent = true;
+	});
+
+	 alert(gyroPresent);
+</script> -->
+<script>
+	var check = {
+	  gyroscope: function (callback) {
+		function handler(event) {
+		  var hasGyro = typeof event.alpha === 'number'
+					 && typeof event.beta  === 'number'
+					 && typeof event.gamma === 'number';
+		  window.removeEventListener('deviceorientation', handler, false);
+		  callback(hasGyro);
+		}
+		window.addEventListener('deviceorientation', handler, false);
+	  }
+	};
+
+	check.gyroscope(function (hasGyroscope) {
+	  if(hasGyroscope) {
+		<!-- console.log('Device has functional gyroscope.') -->
+		alert('Device has functional gyroscope.');
+	  } else {
+		<!-- console.log('Device has no functional gyroscope.');-->
+		alert('Device has no functional gyroscope.');
+	  }
+	});
+</script>
