@@ -1,12 +1,12 @@
 <head>
     <title>Internovam Demo</title>
-    <!-- <script src='../vendor/aframe/build/aframe.min.js'></script> -->
-    <script src='https://jeromeetienne.github.io/AR.js/aframe/examples/vendor/aframe/build/aframe.min.js'></script>
-    <!-- <script src='../../build/aframe-ar.js'></script> -->
-    <script src='https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js'></script>
+    <script src='../vendor/aframe/build/aframe.min.js'></script>
+    <!-- <script src='https://jeromeetienne.github.io/AR.js/aframe/examples/vendor/aframe/build/aframe.min.js'></script> -->
+    <script src='../../build/aframe-ar.js'></script>
+    <!-- <script src='https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js'></script> -->
     <script>ARjs.Context.baseURL = '../../../three.js/'</script>
-    <!-- script src='src/aframe-shadow-plane.js'></script> -->
-	<script src='https://jeromeetienne.github.io/AR.js/aframe/examples/demo-firefox-release/src/aframe-shadow-plane.js'></script>
+    <script src='src/aframe-shadow-plane.js'></script>
+	<!-- <script src='https://jeromeetienne.github.io/AR.js/aframe/examples/demo-firefox-release/src/aframe-shadow-plane.js'></script> -->
 	<style type="text/css">
 		#arjsDebugUIContainer {display: none;}
 		
@@ -23,7 +23,7 @@
 			width: 100vw;
 			height: 100vh;
 			background-color: rgba(192, 192, 192, 0.5);
-			background-image: url("http://i.stack.imgur.com/MnyxU.gif");
+			background-image: url("https://i.stack.imgur.com/MnyxU.gif");
 			background-repeat: no-repeat;
 			background-position: center;
 		}
@@ -51,7 +51,7 @@
 		  if(hasGyroscope) {
 			//
 		  } else {
-			window.location = "https://cyzoneapp.internovam.com/arjs/aframe/examples/dinero/index-vr.html";
+			window.location = "https://zerojuls.github.io/test-arjs/aframe/examples/dinero/index-vr.html";
 		  }
 		});
 	</script>
@@ -60,7 +60,7 @@
 <body style='margin : 0px; overflow: hidden;'>
 
 <div id="page" style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
-    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> - Dinero
+    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> - Campaña 2017
 </div>
 
 <div id="loading"></div>
@@ -93,10 +93,13 @@ onReady(function () {
 
     <a-assets>
         <!-- <a-asset-item id='tree-obj' src='models/little-fox/dollar/Dolar.obj'></a-asset-item>
-        <a-asset-item id='tree-mtl' src='models/little-fox/dollar/Dolar.mtl'></a-asset-item> -->
+        <a-asset-item id='tree-mtl' src='models/little-fox/dollar/Dolar.mtl'></a-asset-item>
 		
         <a-asset-item id='tree-obj' src='models/little-fox/dollar11/DOLAR.obj'></a-asset-item>
-        <a-asset-item id='tree-mtl' src='models/little-fox/dollar11/DOLAR.mtl'></a-asset-item>
+        <a-asset-item id='tree-mtl' src='models/little-fox/dollar11/DOLAR.mtl'></a-asset-item>  -->
+		
+		<a-asset-item id='tree-obj' src='models/little-fox/billete50/billete_12.obj'></a-asset-item>
+        <a-asset-item id='tree-mtl' src='models/little-fox/billete50/billete_12.mtl'></a-asset-item>
     </a-assets>
 
     <a-anchor >
@@ -111,7 +114,7 @@ onReady(function () {
 
             <a-entity shadowonly-plane='width: 3; height: 3; opacity: 0.7'></a-entity>
 
-            <a-entity position='-1.9 0.2 -2' rotation='90 0 0' >
+            <!-- <a-entity position='-1.9 0.2 -2' rotation='90 0 0' >
                 <a-animation attribute='rotation' from='15 0 30' to='-15 0 30' direction='alternate' dur='500'
                              repeat='indefinite' easing='ease-in-out-cubic'></a-animation>
                 <a-text position='0 0 0' side='double' value='Comienza a generar ingresos ahora!!!' color='orange'
@@ -123,7 +126,7 @@ onReady(function () {
                              repeat='indefinite' easing='ease-in-out-cubic'></a-animation>
                 <a-text position='0 0 0' side='double' value='No pierdas mas tiempo!!!' color='orange'
                         shadow='receive: true'></a-text>
-            </a-entity>
+            </a-entity> -->
 
         </a-entity>
 
