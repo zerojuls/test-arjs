@@ -93,16 +93,16 @@ onReady(function () {
 <a-scene embedded arjs='trackingMethod: best;' antialias='true'>
 
     <a-assets>
-		<a-asset-item id='tree-obj' src='models/little-fox/personas2d/Personas.obj'></a-asset-item>
-        <a-asset-item id='tree-mtl' src='models/little-fox/personas2d/Personas.mtl'></a-asset-item>
+		<a-asset-item id='tree-obj' src='models/little-fox/troquel/personas_troquel.obj'></a-asset-item>
+        <a-asset-item id='tree-mtl' src='models/little-fox/troquel/personas_troquel.mtl'></a-asset-item>
     </a-assets>
 
     <a-anchor >
 
         <a-entity id="logo" scale='0.8 0.8 0.8'>
             
-                <a-entity obj-model='obj: #tree-obj; mtl: #tree-mtl' position='0 0 -15' rotation='-45 0 0'
-                          shadow='receive: true' scale='0.2 0.2 0.2'></a-entity>
+                <a-entity obj-model='obj: #tree-obj; mtl: #tree-mtl' position='0 0 0' rotation='0 0 0'
+                          shadow='receive: true' scale='0.5 0.5 0.5'></a-entity>
 
         </a-entity>
 
