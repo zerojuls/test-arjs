@@ -30,8 +30,8 @@
 			-webkit-appearance: button;
 			-moz-appearance: button;
 			appearance: button;
-			width: 10vw;
-			height: 10vh;
+			width: 8vw;
+			height: 2.2vh;
 			text-decoration: none;
 			color: initial;
 		}
@@ -59,7 +59,7 @@
 <body >
 
 <div id="page" style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
-    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> -  <a href="https://zerojuls.github.io/test-arjs/aframe/examples/dinero/index-vr.html" class="button">Recargar</a>
+    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> - <a href="https://zerojuls.github.io/test-arjs/aframe/examples/valla2/index-vr.html" class="button">Recargar</a>
 </div>
 
 <div id="loading"></div>
@@ -89,13 +89,10 @@ onReady(function () {
 </script>
 
 <a-scene>
-
     <asset>
-	
 		<img id="sky" src="models/little-fox/dollar/clear-sunny-sky.jpg">
-		
-		<a-asset-item id='tree-obj' src='models/little-fox/billete50/billete_12.obj'></a-asset-item>
-        <a-asset-item id='tree-mtl' src='models/little-fox/billete50/billete_12.mtl'></a-asset-item>
+		<a-asset-item id='tree-obj' src='models/little-fox/cuadro/recuadros_1.obj'></a-asset-item>
+        <a-asset-item id='tree-mtl' src='models/little-fox/cuadro/recuadros_1.mtl'></a-asset-item>
     </asset>
 
         <a-sky src="#sky"></a-sky>
@@ -106,9 +103,9 @@ onReady(function () {
 
 			<a-entity>
 					<a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl"
-							  position="0 25.3 97"
+							  position="0 15.3 57"
 							  rotation="0 -100 0"
-							  scale="1.5 1.5 1.5">
+							  scale="0.8 0.8 0.8">
 							  
 							  <a-animation attribute="rotation"
 										   dur="8000"
@@ -122,9 +119,9 @@ onReady(function () {
 			
 			<a-entity>
 					<a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl"
-							  position="0 25.3 103"
+							  position="0 15.3 143"
 							  rotation="0 -100 0"
-							  scale="1.5 1.5 1.5">
+							  scale="0.8 0.8 0.8">
 							  
 							  <a-animation attribute="rotation"
 										   dur="8000"
