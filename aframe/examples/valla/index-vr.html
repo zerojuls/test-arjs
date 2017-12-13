@@ -1,0 +1,130 @@
+<head>
+    <title>Belcorp - Dinero</title>
+    <script src='../vendor/aframe/build/aframe.min.js'></script>
+    
+	<style type="text/css">
+		
+		#page {
+			display: none;
+		}
+		
+		div.a-enter-vr embedded button.a-enter-vr-button {
+			display: none;
+		}
+		
+		#loading {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 100;
+			width: 100vw;
+			height: 100vh;
+			background-color: rgba(192, 192, 192, 0.5);
+			background-image: url("https://i.stack.imgur.com/MnyxU.gif");
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		
+	</style>
+	<script>
+		(function () {
+
+		  if ( typeof window.CustomEvent === "function" ) return false;
+
+		  function CustomEvent ( event, params ) {
+			params = params || { bubbles: false, cancelable: false, detail: undefined };
+			var evt = document.createEvent( 'CustomEvent' );
+			evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+			return evt;
+		   }
+
+		  CustomEvent.prototype = window.Event.prototype;
+
+		  window.CustomEvent = CustomEvent;
+		})();
+	</script>
+</head>
+
+<body >
+
+<div id="page" style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> - Campaña 2017
+</div>
+
+<div id="loading"></div>
+
+<script>
+
+function onReady(callback) {
+    var intervalID = window.setInterval(checkReady, 1000);
+
+    function checkReady() {
+        if (document.getElementsByTagName('body')[0] !== undefined) {
+            window.clearInterval(intervalID);
+            callback.call(this);
+        }
+    }
+}
+
+function show(id, value) {
+    document.getElementById(id).style.display = value ? 'block' : 'none';
+}
+
+onReady(function () {
+    show('page', true);
+    show('loading', false);
+});
+
+</script>
+
+<a-scene>
+
+    <asset>
+	
+		<img id="sky" src="models/little-fox/dollar/clear-sunny-sky.jpg">
+		<a-asset-item id='tree-obj' src='models/little-fox/valla/valla_4.obj'></a-asset-item>
+        <a-asset-item id='tree-mtl' src='models/little-fox/valla/valla_4.mtl'></a-asset-item>
+    </asset>
+
+        <a-sky src="#sky"></a-sky>
+	
+        <a-entity position="0 25 100">
+			<a-camera></a-camera>
+        </a-entity>
+
+			<a-entity>
+					<a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl"
+							  position="0 25.3 97"
+							  rotation="0 -100 0"
+							  scale="0.5 0.5 0.5">
+							  
+							  <a-animation attribute="rotation"
+										   dur="8000"
+										   fill="forwards"
+										   from="0 0 0"
+										   to="0 360 0"
+										   repeat="indefinite"></a-animation>
+							  
+					</a-entity>
+			</a-entity>
+			
+			<a-entity>
+					<a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl"
+							  position="0 25.3 103"
+							  rotation="0 -100 0"
+							  scale="0.5 0.5 0.5">
+							  
+							  <a-animation attribute="rotation"
+										   dur="8000"
+										   fill="forwards"
+										   from="0 0 0"
+										   to="0 360 0"
+										   repeat="indefinite"></a-animation>
+							  
+					</a-entity>
+					
+			</a-entity>
+
+</a-scene>
+</body>
