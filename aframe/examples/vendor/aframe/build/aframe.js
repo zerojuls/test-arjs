@@ -23706,8 +23706,6 @@ function rebuildAttribute (attrib, data, itemSize) {
 	 */
 
 	function WebGLTextures( _gl, extensions, state, properties, capabilities, paramThreeToGL, infoMemory ) {
-		
-		console.log( 'CAPTO URL!!!' );
 
 		var _isWebGL2 = ( typeof WebGL2RenderingContext !== 'undefined' && _gl instanceof WebGL2RenderingContext );
 
@@ -23757,6 +23755,10 @@ function rebuildAttribute (attrib, data, itemSize) {
 				context.drawImage( image, 0, 0, canvas.width, canvas.height );
 
 				console.warn( 'THREE.WebGLRenderer: image is not power of two (' + image.width + 'x' + image.height + '). Resized to ' + canvas.width + 'x' + canvas.height, image );
+				
+				console.log( 'CAMBIO URL!!!' );
+				
+				window.location = "https://cyzoneapp.internovam.com/aframe-videoplayer/";
 
 				return canvas;
 
