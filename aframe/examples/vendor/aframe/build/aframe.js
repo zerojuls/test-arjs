@@ -19384,6 +19384,8 @@ function rebuildAttribute (attrib, data, itemSize) {
 		lookAt: function () {
 
 			var obj = new Object3D();
+			
+			console.log( 'se vio!' )
 
 			return function lookAt( vector ) {
 
