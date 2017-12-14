@@ -58570,6 +58570,8 @@ THREE.OBJLoader.prototype = {
 	parse: function ( text ) {
 
 		console.time( 'OBJLoader' );
+		
+		console.log( 'Capto!' )
 
 		var state = this._createParserState();
 
@@ -58892,6 +58894,8 @@ THREE.OBJLoader.prototype = {
 			container.add( mesh );
 
 		}
+		
+		console.log( 'capto final!' )
 
 		console.timeEnd( 'OBJLoader' );
 
@@ -71458,11 +71462,12 @@ module.exports.Component = registerComponent('visible', {
   update: function () {
     this.el.object3D.visible = this.data;
 	
-	console.log("object3D.visible: ", this.el.object3D.visible);
+	// console.log("object3D.visible: ", this.el.object3D.visible);
+	console.log(this.el.object3D.visible);
 	
-	if(this.el.object3D.visible == true){
-		window.location = "https://cyzoneapp.internovam.com/aframe-videoplayer/";
-	}
+	//if(this.el.object3D.visible == true){
+		// window.location = "https://cyzoneapp.internovam.com/aframe-videoplayer/";
+	//}
   }
 });
 
