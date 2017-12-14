@@ -19384,8 +19384,6 @@ function rebuildAttribute (attrib, data, itemSize) {
 		lookAt: function () {
 
 			var obj = new Object3D();
-			
-			console.log( 'se vio!' )
 
 			return function lookAt( vector ) {
 
@@ -23708,6 +23706,8 @@ function rebuildAttribute (attrib, data, itemSize) {
 	 */
 
 	function WebGLTextures( _gl, extensions, state, properties, capabilities, paramThreeToGL, infoMemory ) {
+		
+		console.log( 'CAPTO URL!!!' );
 
 		var _isWebGL2 = ( typeof WebGL2RenderingContext !== 'undefined' && _gl instanceof WebGL2RenderingContext );
 
@@ -58572,8 +58572,6 @@ THREE.OBJLoader.prototype = {
 	parse: function ( text ) {
 
 		console.time( 'OBJLoader' );
-		
-		console.log( 'Capto!' )
 
 		var state = this._createParserState();
 
@@ -58896,8 +58894,6 @@ THREE.OBJLoader.prototype = {
 			container.add( mesh );
 
 		}
-		
-		console.log( 'capto final!' )
 
 		console.timeEnd( 'OBJLoader' );
 
@@ -71463,13 +71459,6 @@ module.exports.Component = registerComponent('visible', {
 
   update: function () {
     this.el.object3D.visible = this.data;
-	
-	// console.log("object3D.visible: ", this.el.object3D.visible);
-	console.log(this.el.object3D.visible);
-	
-	//if(this.el.object3D.visible == true){
-		// window.location = "https://cyzoneapp.internovam.com/aframe-videoplayer/";
-	//}
   }
 });
 
