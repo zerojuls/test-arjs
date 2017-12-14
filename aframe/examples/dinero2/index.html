@@ -1,0 +1,116 @@
+<head>
+    <title>Cyzone</title>
+    <script src='../vendor/aframe/build/aframe.min.js'></script>
+    <script src='../../build/aframe-ar.js'></script>
+    <script>ARjs.Context.baseURL = '../../../three.js/'</script>
+    <script src='src/aframe-shadow-plane.js'></script>
+	<style type="text/css">
+		#arjsDebugUIContainer {display: none;}
+		
+		#page {
+			display: none;
+		}
+		
+		div.a-enter-vr embedded button.a-enter-vr-button {
+			display: none;
+		}
+		
+		#loading {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 100;
+			width: 100vw;
+			height: 100vh;
+			background-color: rgba(192, 192, 192, 0.5);
+			background-image: url("https://i.stack.imgur.com/MnyxU.gif");
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		
+	</style>
+	<script>
+	
+		// or simply
+		alert = function() {};
+		
+		var check = {
+		  gyroscope: function (callback) {
+			function handler(event) {
+			  var hasGyro = typeof event.alpha === 'number'
+						 && typeof event.beta  === 'number'
+						 && typeof event.gamma === 'number';
+			  window.removeEventListener('deviceorientation', handler, false);
+			  callback(hasGyro);
+			}
+			window.addEventListener('deviceorientation', handler, false);
+		  }
+		};
+
+		check.gyroscope(function (hasGyroscope) {
+		  if(hasGyroscope) {
+			//
+		  } else {
+			window.location = "https://zerojuls.github.io/test-arjs/aframe/examples/dinero/index-vr.html";
+		  }
+		});
+	</script>
+</head>
+
+<body style='margin : 0px; overflow: hidden;'>
+
+<div id="page" style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> - <a href="https://zerojuls.github.io/test-arjs/aframe/examples/dinero/" >Recargar</a>
+</div>
+
+<div id="loading"></div>
+
+<script>
+
+function onReady(callback) {
+    var intervalID = window.setInterval(checkReady, 1000);
+
+    function checkReady() {
+        if (document.getElementsByTagName('body')[0] !== undefined) {
+            window.clearInterval(intervalID);
+            callback.call(this);
+        }
+    }
+}
+
+function show(id, value) {
+    document.getElementById(id).style.display = value ? 'block' : 'none';
+}
+
+onReady(function () {
+    show('page', true);
+    show('loading', false);
+});
+
+</script>
+
+<a-scene embedded arjs='trackingMethod: best;' antialias='true'>
+
+    <a-assets>
+		<a-asset-item id='tree-obj' src='models/little-fox/billete50/billete_12.obj'></a-asset-item>
+        <a-asset-item id='tree-mtl' src='models/little-fox/billete50/billete_12.mtl'></a-asset-item>
+    </a-assets>
+
+    <a-anchor >
+
+        <a-entity id="logo" scale='0.8 0.8 0.8'>
+            <a-entity position='0 0 0'  rotation='0 0 0'>
+                <a-animation attribute='rotation' from='0 0 0' to='0 360 0' dur='10000'
+                             repeat='indefinite' easing='linear'></a-animation>
+                <a-entity obj-model='obj: #tree-obj; mtl: #tree-mtl' position='0 0 0' rotation='0 0 0'
+                          shadow='receive: true' scale='1.5 1.5 1.5'></a-entity>
+            </a-entity>
+
+        </a-entity>
+
+    </a-anchor>
+
+    <a-camera-static/>
+</a-scene>
+</body>
