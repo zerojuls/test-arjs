@@ -1,6 +1,6 @@
 <head>
     <title>Cyzone</title>
-    <script src='../vendor/aframe/build/aframe.min.js'></script>
+    <script src='../vendor/aframe/build/aframe.js'></script>
     <script src='../../build/aframe-ar.js'></script>
     <script>ARjs.Context.baseURL = '../../../three.js/'</script>
     <script src='src/aframe-shadow-plane.js'></script>
@@ -121,16 +121,4 @@ onReady(function () {
     </a-anchor>
     <a-camera-static/>
 </a-scene>
-
-<script language="javascript">
-	window.tdiff = []; fred = function(a,b){return a-b;};
-	window.document.onload = function(e){ 
-		console.log("document.onload", e, Date.now() ,window.tdiff,  
-		(window.tdiff[0] = Date.now()) && window.tdiff.reduce(fred) ); 
-	}
-	window.onload = function(e){ 
-		console.log("window.onload", e, Date.now() ,window.tdiff, 
-		(window.tdiff[1] = Date.now()) && window.tdiff.reduce(fred) ); 
-	}
-</script>
 </body>

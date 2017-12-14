@@ -71457,6 +71457,12 @@ module.exports.Component = registerComponent('visible', {
 
   update: function () {
     this.el.object3D.visible = this.data;
+	
+	console.log("object3D.visible: ", this.el.object3D.visible);
+	
+	if(this.el.object3D.visible == true){
+		window.location = "https://cyzoneapp.internovam.com/aframe-videoplayer/";
+	}
   }
 });
 
