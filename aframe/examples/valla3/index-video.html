@@ -36,6 +36,31 @@
 			color: initial;
 		}
 		
+		#myVideo {
+		  text-align: center;
+		}
+		#mp4_src {
+		  display: inline-block;
+		}
+		
+		.outer {
+			display: table;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+		}
+
+		.middle {
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		.inner {
+			margin-left: auto;
+			margin-right: auto; 
+			width: 400px; /*whatever width you want*/
+		}
+		
 	</style>
 	<script>
 		(function () {
@@ -56,11 +81,19 @@
 	</script>
 </head>
 
-<body >
+<body>
 
 <div id="page" style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
-    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> - <a href="https://zerojuls.github.io/test-arjs/aframe/examples/valla3/index-vr.html" class="button">Recargar</a>
+    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> - <a href="https://zerojuls.github.io/test-arjs/aframe/examples/valla3/index-vr.html" class="button">Recargar</a><br><br><br><br>
+
+	<video id="myVideo" autoplay loop>
+		<source id="mp4_src" src="video/Video_Personas_4_baja" type="video/mp4">
+		Your browser does not support HTML5 video.
+	</video>
+	
 </div>
+
+
 
 <div id="loading"></div>
 
@@ -91,8 +124,7 @@ onReady(function () {
 <a-scene>
     <asset>
 		<img id="sky" src="models/little-fox/clear-sunny-sky2.jpg">
-		<a-asset-item id='tree-obj' src='models/little-fox/cuadro2/Recuadros.obj'></a-asset-item>
-        <a-asset-item id='tree-mtl' src='models/little-fox/cuadro2/Recuadros.mtl'></a-asset-item>
+		
     </asset>
 
         <a-sky src="#sky"></a-sky>
@@ -100,39 +132,6 @@ onReady(function () {
         <a-entity position="0 25 100">
 			<a-camera></a-camera>
         </a-entity>
-
-			<a-entity>
-					<a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl"
-							  position="0 25.3 87"
-							  rotation="0 -100 0"
-							  scale="0.8 0.8 0.8">
-							  
-							  <a-animation attribute="rotation"
-										   dur="8000"
-										   fill="forwards"
-										   from="0 0 0"
-										   to="0 360 0"
-										   repeat="indefinite"></a-animation>
-							  
-					</a-entity>
-			</a-entity>
-			
-			<a-entity>
-					<a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl"
-							  position="0 25.3 113"
-							  rotation="0 -100 0"
-							  scale="0.8 0.8 0.8">
-							  
-							  <a-animation attribute="rotation"
-										   dur="8000"
-										   fill="forwards"
-										   from="0 0 0"
-										   to="0 360 0"
-										   repeat="indefinite"></a-animation>
-							  
-					</a-entity>
-					
-			</a-entity>
 
 </a-scene>
 </body>
