@@ -98,15 +98,6 @@ onReady(function () {
     show('page', true);
     show('loading', false);
 	
-		console.log('before load script');
-		console.log(document.querySelector("a-marker").object3D.visible);
-	
-		if(document.querySelector("a-marker").object3D.visible == true) {
-			console.log('It\'s true');
-			window.location = "https://cyzoneapp.internovam.com/aframe-videoplayer/";
-		}
-		
-		console.log('after load script'); 
 });
 
 </script>
@@ -131,21 +122,15 @@ onReady(function () {
     <a-camera-static/>
 </a-scene>
 
-<!-- <script>
-
-	$(document).ready(function() { 
-	
-		console.log('before load script');
-		console.log(document.querySelector("a-marker").object3D.visible);
-	
-		if(document.querySelector("a-marker").object3D.visible == true) {
-			console.log('It\'s true');
-			window.location = "https://cyzoneapp.internovam.com/aframe-videoplayer/";
-		}
-		
-		console.log('after load script'); 
-		
-	});
-
-</script> -->
+<script language="javascript">
+	window.tdiff = []; fred = function(a,b){return a-b;};
+	window.document.onload = function(e){ 
+		console.log("document.onload", e, Date.now() ,window.tdiff,  
+		(window.tdiff[0] = Date.now()) && window.tdiff.reduce(fred) ); 
+	}
+	window.onload = function(e){ 
+		console.log("window.onload", e, Date.now() ,window.tdiff, 
+		(window.tdiff[1] = Date.now()) && window.tdiff.reduce(fred) ); 
+	}
+</script>
 </body>
