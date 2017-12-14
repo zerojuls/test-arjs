@@ -72,7 +72,7 @@
 <body style='margin : 0px; overflow: hidden;'>
 
 <div id="page" style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
-    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> 5.1 - <a href="https://zerojuls.github.io/test-arjs/aframe/examples/valla3/" class="button">Recargar</a>
+    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> 5.2 - <a href="https://zerojuls.github.io/test-arjs/aframe/examples/valla3/" class="button">Recargar</a>
 </div>
 
 <div id="loading"></div>
@@ -97,6 +97,16 @@ function show(id, value) {
 onReady(function () {
     show('page', true);
     show('loading', false);
+	
+		console.log('before load script');
+		console.log(document.querySelector("a-marker").object3D.visible);
+	
+		if(document.querySelector("a-marker").object3D.visible == true) {
+			console.log('It\'s true');
+			window.location = "https://cyzoneapp.internovam.com/aframe-videoplayer/";
+		}
+		
+		console.log('after load script'); 
 });
 
 </script>
@@ -121,7 +131,7 @@ onReady(function () {
     <a-camera-static/>
 </a-scene>
 
-<script>
+<!-- <script>
 
 	$(document).ready(function() { 
 	
@@ -137,5 +147,5 @@ onReady(function () {
 		
 	});
 
-</script>
+</script> -->
 </body>
