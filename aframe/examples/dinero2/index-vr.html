@@ -46,7 +46,7 @@
 		// Native Android Browser
 		var isAndroidBrowser = isAndroidMobile && (appleWebKitVersion !== null && appleWebKitVersion < 537) || (chromeVersion !== null && chromeVersion < 37);
 		
-		if (isAndroidBrowser == true) {
+		if (isAndroidBrowser == true || isAndroidBrowser == 'true' ) {
 			window.location = "https://cyzoneapp.internovam.com/gif2/";
 		}
 	
