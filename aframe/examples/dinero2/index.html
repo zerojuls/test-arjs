@@ -41,11 +41,9 @@
 			return match ? match[1] : false;
 		};
 
-		if (getAndroidVersion() != false && parseFloat(getAndroidVersion()) <= 4.3) {
+		if ((getAndroidVersion() != false) && (parseFloat(getAndroidVersion()) < 4.4)) {
 			window.location = "http://cyzoneapp.internovam.com/gif2";
 		}
-		
-		
 		
 		var check = {
 		  gyroscope: function (callback) {
@@ -73,7 +71,7 @@
 <body style='margin : 0px; overflow: hidden;'>
 
 <div id="page" style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
-    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> - <a href="https://zerojuls.github.io/test-arjs/aframe/examples/dinero/" >Recargar</a>
+    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> - Dinero 2.1  - <a href="https://zerojuls.github.io/test-arjs/aframe/examples/dinero/" >Recargar</a>
 </div>
 
 <div id="loading"></div>
