@@ -68,7 +68,10 @@
 		
 		// console.log(browserInfo[0]);
 		// console.log(browserInfo[1]);
-		alert('Browser: ' + browserInfo[0] + ' - Version: ' + browserInfo[1]);
+		// alert('Browser: ' + browserInfo[0] + ' - Version: ' + browserInfo[1]);
+		
+		var navU = navigator.userAgent;
+		console.log(navU.indexOf('Android'));
 
 		// ouput_main.innerHTML = "Hello. You are using the browser: " + browserInfo;
 		// output_test_ie.innerHTML = "Running IE Version Test: " + (browserInfo.indexOf('IE ') > -1 ? 'true' : 'false');
