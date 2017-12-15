@@ -1,4 +1,6 @@
 <head>
+	<meta charset="UTF-8"/>
+	<link rel="shortcut icon" href="https://cdn3-marcas.belcorp.biz/favicon.ico"/>
     <title>Cyzone</title>
     <script src='../vendor/aframe/build/aframe.min.js'></script>
 	<style type="text/css">
@@ -30,8 +32,8 @@
 	
 		//DETECTOR DE NAVEGADORES
 		
-		// var ouput_main = document.getElementById('output_main');
-		// var output_test_ie = document.getElementById('output_test_ie');
+		// var ouput_browser = "";
+		// var output_browser_version = "";
 
 		function getBrowserInfo()
 		{
@@ -52,10 +54,21 @@
 				M.splice(1, 1, tem[1]);
 			}
 			// return M.join(' ');
-			console.log(M)
+			
+			return M;
+			
+			// ouput_browser = M[0];
+			// output_browser_version = M[1];
+			
+			// console.log(ouput_browser);
+			// console.log(output_browser_version);
 		}
 
 		var browserInfo = getBrowserInfo();
+		
+		// console.log(browserInfo[0]);
+		// console.log(browserInfo[1]);
+		alert('Browser: ' + browserInfo[0] + ' - Version: ' + browserInfo[1]);
 
 		// ouput_main.innerHTML = "Hello. You are using the browser: " + browserInfo;
 		// output_test_ie.innerHTML = "Running IE Version Test: " + (browserInfo.indexOf('IE ') > -1 ? 'true' : 'false');
