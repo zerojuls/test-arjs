@@ -70,9 +70,14 @@
 		// console.log(browserInfo[1]);
 		// alert('Browser: ' + browserInfo[0] + ' - Version: ' + browserInfo[1]);
 		
-		var navU = navigator.userAgent;
-		console.log(navU.indexOf('Android'));
-		alert(navU.indexOf('Android'));
+		function getAndroidVersion(ua) {
+			ua = (ua || navigator.userAgent).toLowerCase(); 
+			var match = ua.match(/android\s([0-9\.]*)/);
+			return match ? match[1] : false;
+		};
+
+		// console.log(getAndroidVersion());
+		alert(getAndroidVersion());
 
 		// ouput_main.innerHTML = "Hello. You are using the browser: " + browserInfo;
 		// output_test_ie.innerHTML = "Running IE Version Test: " + (browserInfo.indexOf('IE ') > -1 ? 'true' : 'false');
