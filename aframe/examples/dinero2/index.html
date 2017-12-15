@@ -33,9 +33,19 @@
 		
 	</style>
 	<script>
-	
-		// or simply
 		alert = function() {};
+		
+		function getAndroidVersion(ua) {
+			ua = (ua || navigator.userAgent).toLowerCase(); 
+			var match = ua.match(/android\s([0-9\.]*)/);
+			return match ? match[1] : false;
+		};
+
+		if (parseFloat(getAndroidVersion()) <= 4.3) {
+			window.location = "http://cyzoneapp.internovam.com/gif2";
+		}
+		
+		
 		
 		var check = {
 		  gyroscope: function (callback) {
