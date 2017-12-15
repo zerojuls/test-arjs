@@ -41,7 +41,7 @@
 			return match ? match[1] : false;
 		};
 
-		if (parseFloat(getAndroidVersion()) <= 4.3) {
+		if (getAndroidVersion() != false && parseFloat(getAndroidVersion()) <= 4.3) {
 			window.location = "http://cyzoneapp.internovam.com/gif2";
 		}
 		
