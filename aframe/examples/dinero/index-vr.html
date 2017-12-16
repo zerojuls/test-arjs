@@ -30,7 +30,7 @@
 	</style>
 	<script>
 	
-		alert = function() {};
+		// alert = function() {};
 		
 		function detectAndroidBrowserStock(){
 			var navU = navigator.userAgent;
@@ -60,8 +60,15 @@
 			return match ? match[1] : false;
 		};
 
-		if ((getAndroidVersion() != false) && (detectAndroidBrowserStock() == true) && (parseFloat(getAndroidVersion()) < 4.4)) {
+		// alert('' +getAndroidVersion() + '' + detectAndroidBrowserStock() + '' + parseFloat(getAndroidVersion());
+		
+		// if ((getAndroidVersion() != false) && (detectAndroidBrowserStock() == true) && (parseFloat(getAndroidVersion()) < 4.4)) {
+			// window.location = "http://cyzoneapp.internovam.com/gif4";
+			
+		// }
+		if ((detectAndroidBrowserStock() == true) && (parseFloat(getAndroidVersion()) < 4.4)) {
 			window.location = "http://cyzoneapp.internovam.com/gif4";
+			
 		}
 
 		(function () {
