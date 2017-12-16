@@ -33,39 +33,6 @@
 		
 	</style>
 	<script>
-		alert = function() {};
-		
-		function detectAndroidBrowserStock(){
-			var navU = navigator.userAgent;
-
-			// Android Mobile
-			var isAndroidMobile = navU.indexOf('Android') > -1 && navU.indexOf('Mozilla/5.0') > -1 && navU.indexOf('AppleWebKit') > -1;
-
-			// Apple webkit
-			var regExAppleWebKit = new RegExp(/AppleWebKit\/([\d.]+)/);
-			var resultAppleWebKitRegEx = regExAppleWebKit.exec(navU);
-			var appleWebKitVersion = (resultAppleWebKitRegEx === null ? null : parseFloat(regExAppleWebKit.exec(navU)[1]));
-
-			// Chrome
-			var regExChrome = new RegExp(/Chrome\/([\d.]+)/);
-			var resultChromeRegEx = regExChrome.exec(navU);
-			var chromeVersion = (resultChromeRegEx === null ? null : parseFloat(regExChrome.exec(navU)[1]));
-
-			// Native Android Browser
-			var isAndroidBrowser = isAndroidMobile && (appleWebKitVersion !== null && appleWebKitVersion < 537) || (chromeVersion !== null && chromeVersion < 37);
-			
-			return isAndroidBrowser;
-		}
-		
-		function getAndroidVersion(ua) {
-			ua = (ua || navigator.userAgent).toLowerCase(); 
-			var match = ua.match(/android\s([0-9\.]*)/);
-			return match ? match[1] : false;
-		};
-
-		if ((getAndroidVersion() != false) && (detectAndroidBrowserStock() == true) && (parseFloat(getAndroidVersion()) < 4.4)) {
-			window.location = "http://cyzoneapp.internovam.com/gif4";
-		}
 		
 		var check = {
 		  gyroscope: function (callback) {
