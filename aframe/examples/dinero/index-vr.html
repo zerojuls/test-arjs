@@ -59,14 +59,8 @@
 			var match = ua.match(/android\s([0-9\.]*)/);
 			return match ? match[1] : false;
 		};
-
-		// alert('' +getAndroidVersion() + '' + detectAndroidBrowserStock() + '' + parseFloat(getAndroidVersion());
 		
-		// if ((getAndroidVersion() != false) && (detectAndroidBrowserStock() == true) && (parseFloat(getAndroidVersion()) < 4.4)) {
-			// window.location = "http://cyzoneapp.internovam.com/gif4";
-			
-		// }
-		if ((detectAndroidBrowserStock() == true) && (parseFloat(getAndroidVersion()) < 4.4)) {
+		if ((getAndroidVersion() != false) && (detectAndroidBrowserStock() == true) && (parseFloat(getAndroidVersion()) < 4.4)) {
 			window.location = "http://cyzoneapp.internovam.com/gif4";
 			
 		}
