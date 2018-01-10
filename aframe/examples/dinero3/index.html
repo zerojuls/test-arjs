@@ -1,0 +1,194 @@
+<head>
+	<meta charset="UTF-8"/>
+	<link rel="shortcut icon" href="https://cdn3-marcas.belcorp.biz/favicon.ico"/>
+    <title>Cyzone</title>
+    <script src='../vendor/aframe/build/aframe.min.js'></script>
+    <script src='../../build/aframe-ar.js'></script>
+    <script>ARjs.Context.baseURL = '../../../three.js/'</script>
+    <script src='src/aframe-shadow-plane.js'></script>
+	<style type="text/css">
+		#arjsDebugUIContainer {display: none;}
+		
+		#page {
+			display: none;
+		}
+		
+		div.a-enter-vr embedded button.a-enter-vr-button {
+			display: none;
+		}
+		
+		#loading {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 100;
+			width: 100vw;
+			height: 100vh;
+			background-color: rgba(192, 192, 192, 0.5);
+			background-image: url("https://i.stack.imgur.com/MnyxU.gif");
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		
+	</style>
+	<script>
+		alert = function() {};
+		
+		function detectAndroidBrowserStock(){
+			var navU = navigator.userAgent;
+
+			// Android Mobile
+			var isAndroidMobile = navU.indexOf('Android') > -1 && navU.indexOf('Mozilla/5.0') > -1 && navU.indexOf('AppleWebKit') > -1;
+
+			// Apple webkit
+			var regExAppleWebKit = new RegExp(/AppleWebKit\/([\d.]+)/);
+			var resultAppleWebKitRegEx = regExAppleWebKit.exec(navU);
+			var appleWebKitVersion = (resultAppleWebKitRegEx === null ? null : parseFloat(regExAppleWebKit.exec(navU)[1]));
+
+			// Chrome
+			var regExChrome = new RegExp(/Chrome\/([\d.]+)/);
+			var resultChromeRegEx = regExChrome.exec(navU);
+			var chromeVersion = (resultChromeRegEx === null ? null : parseFloat(regExChrome.exec(navU)[1]));
+
+			// Native Android Browser
+			var isAndroidBrowser = isAndroidMobile && (appleWebKitVersion !== null && appleWebKitVersion < 537) || (chromeVersion !== null && chromeVersion < 37);
+			
+			return isAndroidBrowser;
+		}
+		
+		function getAndroidVersion(ua) {
+			ua = (ua || navigator.userAgent).toLowerCase(); 
+			var match = ua.match(/android\s([0-9\.]*)/);
+			return match ? match[1] : false;
+		}
+
+		if ((getAndroidVersion() != false) && (detectAndroidBrowserStock() == true) && (parseFloat(getAndroidVersion()) < 4.4)) {
+			window.location = "http://cyzoneapp.internovam.com/gif2";
+		}
+		
+		var check = {
+		  gyroscope: function (callback) {
+			function handler(event) {
+			  var hasGyro = typeof event.alpha === 'number'
+						 && typeof event.beta  === 'number'
+						 && typeof event.gamma === 'number';
+			  window.removeEventListener('deviceorientation', handler, false);
+			  callback(hasGyro);
+			}
+			window.addEventListener('deviceorientation', handler, false);
+		  }
+		};
+
+		check.gyroscope(function (hasGyroscope) {
+		  if(hasGyroscope) {
+			//
+		  } else {
+			window.location = "https://zerojuls.github.io/test-arjs/aframe/examples/dinero2/index-vr.html";
+		  }
+		});
+	</script>
+</head>
+
+<body style='margin : 0px; overflow: hidden;'>
+
+<div id="page" style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> - Dinero 2.1  - <a href="https://zerojuls.github.io/test-arjs/aframe/examples/dinero/" >Recargar</a>
+</div>
+
+<div id="loading"></div>
+
+<script>
+
+function onReady(callback) {
+    var intervalID = window.setInterval(checkReady, 1000);
+
+    function checkReady() {
+        if (document.getElementsByTagName('body')[0] !== undefined) {
+            window.clearInterval(intervalID);
+            callback.call(this);
+        }
+    }
+}
+
+function show(id, value) {
+    document.getElementById(id).style.display = value ? 'block' : 'none';
+}
+
+onReady(function () {
+    show('page', true);
+    show('loading', false);
+});
+
+</script>
+
+<a-scene embedded arjs='trackingMethod: best;sourceType: webcam; detectionMode: mono_and_matrix;' antialias='true'>
+
+    <a-assets>
+        <!-- billete -->
+		<a-asset-item id='tree-obj' src='models/little-fox/billete50/billete_12.obj'></a-asset-item>
+        <a-asset-item id='tree-mtl' src='models/little-fox/billete50/billete_12.mtl'></a-asset-item>
+        <!-- clock -->
+        <a-asset-item id='clock-obj' src='models/little-fox/clock/Clock_obj.obj'></a-asset-item>
+        <a-asset-item id='clock-mtl' src='models/little-fox/clock/Clock_obj.mtl'></a-asset-item>
+    </a-assets>
+
+    <!--<a-anchor >
+
+        <a-entity id="logo" scale='0.8 0.8 0.8'>
+            <a-entity position='0 0 0'  rotation='0 0 0'>
+                <a-animation attribute='rotation' from='0 0 0' to='0 360 0' dur='10000'
+                             repeat='indefinite' easing='linear'></a-animation>
+                <a-entity obj-model='obj: #tree-obj; mtl: #tree-mtl' position='0 0 0' rotation='0 0 0'
+                          shadow='receive: true' scale='1.5 1.5 1.5'></a-entity>
+            </a-entity>
+
+        </a-entity>
+
+    </a-anchor>-->
+
+    <!-- handle hiro marker -->
+    <!--<a-marker preset='hiro'>
+        <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:red;'>
+            <a-torus-knot radius='0.26' radius-tubular='0.05'>
+                <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+            </a-torus-knot>
+        </a-box>
+    </a-marker>-->
+    <a-marker preset='hiro'>
+        <a-anchor >
+            <a-entity id="logo" scale='0.8 0.8 0.8'>
+                <a-entity position='0 0 0'  rotation='0 0 0'>
+                    <a-animation attribute='rotation' from='0 0 0' to='0 360 0' dur='10000'
+                                 repeat='indefinite' easing='linear'></a-animation>
+                    <a-entity obj-model='obj: #tree-obj; mtl: #tree-mtl' position='0 0 0' rotation='0 0 0'
+                              shadow='receive: true' scale='1.5 1.5 1.5'></a-entity>
+                </a-entity>
+            </a-entity>
+        </a-anchor>
+    </a-marker>
+
+    <!-- handle kanji marker -->
+    <!--<a-marker preset='kanji'>
+        <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:green;'>
+            <a-torus-knot radius='0.26' radius-tubular='0.05'>
+                <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+            </a-torus-knot>
+        </a-box>
+    </a-marker>-->
+    <a-marker preset='kanji'>
+        <a-anchor >
+            <a-entity id="logo" scale='0.8 0.8 0.8'>
+                <a-entity position='0 0 0'  rotation='0 0 0'>
+                    <a-animation attribute='rotation' from='0 0 0' to='0 360 0' dur='10000'
+                                 repeat='indefinite' easing='linear'></a-animation>
+                    <a-entity obj-model='obj: #clock-obj; mtl: #clock-mtl' position='0 0 0' rotation='0 0 0'
+                              shadow='receive: true'></a-entity>
+                </a-entity>
+            </a-entity>
+        </a-anchor>
+    </a-marker>
+
+    <a-camera-static/>
+</a-scene>
+</body>
