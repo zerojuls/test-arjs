@@ -8258,13 +8258,12 @@ AFRAME.registerComponent('arjs-anchor', {
 			_this.el.object3D.visible = this._arAnchor.object3d.visible
             if(_this.el.object3D.visible) {
 			    this.el.emit('markerFound');//TODO: Detection event recognize marker added
-			    //console.log('detect!!!');
-			    //console.log(_this.data.preset);
 			    if(_this.data.preset === 'kanji') {
 			        console.log('Redirect!!!');
                     window.location.href = "http://stackoverflow.com";
+                    // event.preventDefault();
+                    return
 			    }
-			    // console.log(_this.el)
 			}
 		}else if( _this._arAnchor.parameters.changeMatrixMode === 'cameraTransformMatrix' ){
 			_this.el.sceneEl.object3D.visible = this._arAnchor.object3d.visible
