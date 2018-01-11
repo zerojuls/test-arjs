@@ -1,7 +1,7 @@
 <head>
     <meta charset="UTF-8"/>
     <link rel="shortcut icon" href="https://cdn3-marcas.belcorp.biz/favicon.ico"/>
-    <title>Cyzone 4.20</title>
+    <title>Cyzone 4.21</title>
     <script src='../vendor/aframe/build/aframe.min.js'></script>
     <script src='../../build/aframe-ar.js'></script>
     <script>ARjs.Context.baseURL = '../../../three.js/'</script>
@@ -96,15 +96,25 @@
                 var el = this.el;
                 // var data = this.data;
 
-                function redirectUrl() {
+                /*function redirectUrl() {
                     // if(this.data.preset === 'kanji') {
                         console.log('URL!!!')
                         // window.location = "https://www.google.com.pe";
                     // }
-                }
+                }*/
 
-                 el.sceneEl.addEventListener('markerFound', redirectUrl());
-                 el.sceneEl.dispatch('markerFound');
+                var TestClass1 = function() {
+                    this.className = "TestClass1";
+                    this.callback = function(event) {
+                        console.log(this.className + " = type:" + event.type + " / dispatcher:" + event.target.className);
+                    }
+                };
+
+                var t1 = new TestClass1();
+
+                 el.sceneEl.addEventListener('markerFound', t1.callback, t1);
+                 // el.sceneEl.addEventListener('markerFound', redirectUrl());
+                 // el.sceneEl.dispatch('markerFound');
                 /*el.sceneEl.addEventListener('markerFound', function () {
                     //el.setAttribute('animation-mixer', {clip: '*', loop: 'once'});
                     //el.emit('ar-ready');
@@ -119,7 +129,7 @@
 <body style='margin : 0px; overflow: hidden;'>
 
 <div id="page" style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
-    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> - Dinero 4.20 - <a href="https://zerojuls.github.io/test-arjs/aframe/examples/dinero/" >Recargar</a>
+    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> - Dinero 4.21 - <a href="https://zerojuls.github.io/test-arjs/aframe/examples/dinero/" >Recargar</a>
 </div>
 
 <div id="loading"></div>
