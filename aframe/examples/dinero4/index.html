@@ -1,7 +1,7 @@
 <head>
     <meta charset="UTF-8"/>
     <link rel="shortcut icon" href="https://cdn3-marcas.belcorp.biz/favicon.ico"/>
-    <title>Cyzone 4.17</title>
+    <title>Cyzone 4.18</title>
     <script src='../vendor/aframe/build/aframe.min.js'></script>
     <script src='../../build/aframe-ar.js'></script>
     <script>ARjs.Context.baseURL = '../../../three.js/'</script>
@@ -94,11 +94,19 @@
         AFRAME.registerComponent('play-on-scan', {
             init: function () {
                 var el = this.el;
-                el.sceneEl.addEventListener('markerFound', function (event) {
+                // var data = this.data;
+
+                function redirectUrl() {
+                    if(this.data.preset === 'kanji') {
+                        window.location = "https://www.google.com.pe";
+                    }
+                }
+
+                el.sceneEl.addEventListener('markerFound', redirectUrl());
+                /*el.sceneEl.addEventListener('markerFound', function () {
                     //el.setAttribute('animation-mixer', {clip: '*', loop: 'once'});
                     //el.emit('ar-ready');
-                    console.log(event);
-                });
+                });*/
                 //console.log('marker detected');
                 //console.log(el);
             }
@@ -109,7 +117,7 @@
 <body style='margin : 0px; overflow: hidden;'>
 
 <div id="page" style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
-    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> - Dinero 4.17 - <a href="https://zerojuls.github.io/test-arjs/aframe/examples/dinero/" >Recargar</a>
+    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> - Dinero 4.18 - <a href="https://zerojuls.github.io/test-arjs/aframe/examples/dinero/" >Recargar</a>
 </div>
 
 <div id="loading"></div>
