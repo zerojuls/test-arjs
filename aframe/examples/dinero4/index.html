@@ -196,8 +196,11 @@ onReady(function () {
 
     <a-camera-static/>
 </a-scene>
-<script type="text/javascript">
-    function detectMarkers() {
+<script>
+    // self executing function here
+    (function() {
+        // your page initialization code here
+        // the DOM will be available here
         console.log("BEFORE DETECT");
         var artoolkitMarkerHiro = new THREEx.ArMarkerControls(arToolkitContext, knownPositionMesh, {
             type : 'pattern',
@@ -210,7 +213,6 @@ onReady(function () {
             // alert("DETECT HIRO!")
             console.log("DETECT HIRO!")
         });
-    }
-    window.onload = detectMarkers;
+    })();
 </script>
 </body>
