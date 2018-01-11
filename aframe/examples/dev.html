@@ -66,6 +66,29 @@
 	<script>
         (function() {
             console.log("BEFORE DETECT");
+
+            // create atToolkitContext
+            var arToolkitContext = new THREEx.ArToolkitContext({
+                cameraParametersUrl: '../../data/data/camera_para.dat',
+                detectionMode: 'mono',
+                canvasWidth: 80*4,
+                canvasHeight: 60*4,
+                maxDetectionRate: 15,
+            })
+            // initialize it
+            arToolkitContext.init(function onCompleted(){
+                // copy projection matrix to camera
+                camera.projectionMatrix.copy( arToolkitContext.getProjectionMatrix() );
+            })
+            // update artoolkit on every frame
+            onRenderFcts.push(function(){
+                if( arToolkitSource.ready === false )	return
+                arToolkitContext.update( arToolkitSource.domElement )
+            })
+
+            var knownPositionMesh	= new THREE.Object3D();
+            scene.add( knownPositionMesh );
+
             var artoolkitMarkerHiro = new THREEx.ArMarkerControls(arToolkitContext, knownPositionMesh, {
                 type : 'pattern',
                 patternUrl : '../../data/data/patt.hiro'
