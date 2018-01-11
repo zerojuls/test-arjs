@@ -90,18 +90,9 @@
     </script>
     <script>
         // TODO: RECOGNIZE MARKER DETECTION
-        console.log('before marker');
         AFRAME.registerComponent('play-on-scan', {
             init: function () {
                 var el = this.el;
-                // var data = this.data;
-
-                /*function redirectUrl() {
-                    // if(this.data.preset === 'kanji') {
-                        console.log('URL!!!')
-                        // window.location = "https://www.google.com.pe";
-                    // }
-                }*/
 
                 var TestClass1 = function() {
                     this.className = "TestClass1";
@@ -110,17 +101,23 @@
                     }
                 };
 
-                var t1 = new TestClass1();
+                var TestClass2 = function() {
+                    this.className = "TestClass2";
+                    this.dispatchOurEvent = function() {
+                        EventBus.dispatch("callback_event", this);
+                    }
+                };
 
-                 el.sceneEl.addEventListener('markerFound', t1.callback, t1);
+                var t1 = new TestClass1();
+                var t2 = new TestClass2();
+                el.sceneEl.addEventListener('markerFound', t1.callback, t1);
+                t2.dispatchOurEvent();
                  // el.sceneEl.addEventListener('markerFound', redirectUrl());
                  // el.sceneEl.dispatch('markerFound');
                 /*el.sceneEl.addEventListener('markerFound', function () {
                     //el.setAttribute('animation-mixer', {clip: '*', loop: 'once'});
                     //el.emit('ar-ready');
                 });*/
-                //console.log('marker detected');
-                //console.log(el);
             }
         });
     </script>
