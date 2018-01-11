@@ -97,14 +97,14 @@
                 // var data = this.data;
 
                 function redirectUrl() {
-                    if(this.data.preset === 'kanji') {
+                    // if(this.data.preset === 'kanji') {
                         console.log('URL!!!')
-                        window.location = "https://www.google.com.pe";
-                    }
+                        // window.location = "https://www.google.com.pe";
+                    // }
                 }
 
-                el.sceneEl.addEventListener('markerFound', redirectUrl());
-                el.sceneEl.dispatch('markerFound');
+                 el.sceneEl.addEventListener('markerFound', redirectUrl());
+                 el.sceneEl.dispatch('markerFound');
                 /*el.sceneEl.addEventListener('markerFound', function () {
                     //el.setAttribute('animation-mixer', {clip: '*', loop: 'once'});
                     //el.emit('ar-ready');
