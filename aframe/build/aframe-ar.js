@@ -8260,7 +8260,7 @@ AFRAME.registerComponent('arjs-anchor', {
 			    this.el.emit('markerFound');//TODO: Detection event recognize marker added
 			    //console.log('detect!!!');
 			    //console.log(_this.data.preset);
-			    if(_this.data.preset === 'kanji') { console.log('Redirect!!!'); }
+			    if(_this.data.preset === 'kanji') { console.log('Redirect!!!'); window.location = "https://www.google.com.pe";}
 			    // console.log(_this.el)
 			}
 		}else if( _this._arAnchor.parameters.changeMatrixMode === 'cameraTransformMatrix' ){
