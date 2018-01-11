@@ -94,11 +94,14 @@
             init: function () {
                 var el = this.el;
                 el.sceneEl.addEventListener('markerFound', function () {
-                    el.setAttribute('animation-mixer', {clip: '*', loop: 'once'});
-                    el.emit('ar-ready');
+                    //el.setAttribute('animation-mixer', {clip: '*', loop: 'once'});
+                    //el.emit('ar-ready');
+                    console.log('marker detected');
+                    console.log(el);
+                    console.log(el.scr);
                 });
-                console.log('marker detected');
-                console.log(el);
+                //console.log('marker detected');
+                //console.log(el);
             }
         });
     </script>
