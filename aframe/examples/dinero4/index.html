@@ -3,11 +3,13 @@
 	<link rel="shortcut icon" href="https://cdn3-marcas.belcorp.biz/favicon.ico"/>
     <title>Cyzone 4.7</title>
     <script src='../vendor/aframe/build/aframe.min.js'></script>
-    <script src='../../build/aframe-ar.js'></script>
+    <script src='../../src/component-anchor.js'></script>
     <script>ARjs.Context.baseURL = '../../../three.js/'</script>
     <script src='src/aframe-shadow-plane.js'></script>
+
+    <script src='../../build/aframe-ar.js'></script>
     <!-- three.js -->
-    <script src='../../../three.js/examples/vendor/three.js/build/three.js'></script>
+    <!--<script src='../../../three.js/examples/vendor/three.js/build/three.js'></script>
     <script src="../../../three.js/examples/vendor/three.js/examples/js/libs/stats.min.js"></script>
     <script src="../../../three.js/vendor/jsartoolkit5/build/artoolkit.min.js"></script>
     <script src="../../../three.js/vendor/jsartoolkit5/js/artoolkit.api.js"></script>
@@ -15,8 +17,7 @@
     <script src="../../../three.js/src/threex/threex-artoolkitsource.js"></script>
     <script src="../../../three.js/src/threex/threex-artoolkitcontext.js"></script>
     <script src="../../../three.js/src/threex/threex-artoolkitprofile.js"></script>
-    <script src="../../../three.js/src/threex/threex-arbasecontrols.js"></script>
-
+    <script src="../../../three.js/src/threex/threex-arbasecontrols.js"></script>-->
 	<style type="text/css">
 		#arjsDebugUIContainer {display: none;}
 		
@@ -158,69 +159,64 @@ onReady(function () {
 
     </a-anchor>-->
 
-    <!-- handle kanji marker -->
-    <!--<a-marker preset='kanji'>
-        <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:green;'>
-            <a-torus-knot radius='0.26' radius-tubular='0.05'>
-                <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
-            </a-torus-knot>
-        </a-box>
-    </a-marker>-->
-    <a-marker preset='kanji'>
-        <!--<a-anchor >-->
-            <a-entity id="logo" scale='0.8 0.8 0.8'>
-                <a-entity position='0 0 0'  rotation='0 0 0'>
-                    <a-animation attribute='rotation' from='0 0 0' to='0 360 0' dur='10000'
-                                 repeat='indefinite' easing='linear'></a-animation>
-                    <a-entity obj-model='obj: #clock-obj; mtl: #clock-mtl' position='0 0 0' rotation='0 0 0'
-                              shadow='receive: true'></a-entity>
+    <a-anchor >
+        <!-- handle kanji marker -->
+        <!--<a-marker preset='kanji'>
+            <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:green;'>
+                <a-torus-knot radius='0.26' radius-tubular='0.05'>
+                    <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+                </a-torus-knot>
+            </a-box>
+        </a-marker>-->
+        <a-marker preset='kanji'>
+            <!--<a-anchor >-->
+                <a-entity id="logo" scale='0.8 0.8 0.8'>
+                    <a-entity position='0 0 0'  rotation='0 0 0'>
+                        <a-animation attribute='rotation' from='0 0 0' to='0 360 0' dur='10000'
+                                     repeat='indefinite' easing='linear'></a-animation>
+                        <a-entity obj-model='obj: #clock-obj; mtl: #clock-mtl' position='0 0 0' rotation='0 0 0'
+                                  shadow='receive: true'></a-entity>
+                    </a-entity>
                 </a-entity>
-            </a-entity>
-        <!--</a-anchor>-->
-    </a-marker>
+            <!--</a-anchor>-->
+        </a-marker>
 
-    <!-- handle hiro marker -->
-    <!--<a-marker preset='hiro'>
-        <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:red;'>
-            <a-torus-knot radius='0.26' radius-tubular='0.05'>
-                <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
-            </a-torus-knot>
-        </a-box>
-    </a-marker>-->
-    <a-marker preset='hiro'>
-        <!--<a-anchor >-->
-            <a-entity id="logo" scale='0.8 0.8 0.8'>
-                <a-entity position='0 0 0'  rotation='0 0 0'>
-                    <a-animation attribute='rotation' from='0 0 0' to='0 360 0' dur='10000'
-                                 repeat='indefinite' easing='linear'></a-animation>
-                    <a-entity obj-model='obj: #tree-obj; mtl: #tree-mtl' position='0 0 0' rotation='0 0 0'
-                              shadow='receive: true' scale='1.5 1.5 1.5'></a-entity>
+        <!-- handle hiro marker -->
+        <!--<a-marker preset='hiro'>
+            <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:red;'>
+                <a-torus-knot radius='0.26' radius-tubular='0.05'>
+                    <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+                </a-torus-knot>
+            </a-box>
+        </a-marker>-->
+        <a-marker preset='hiro'>
+            <!--<a-anchor >-->
+                <a-entity id="logo" scale='0.8 0.8 0.8'>
+                    <a-entity position='0 0 0'  rotation='0 0 0'>
+                        <a-animation attribute='rotation' from='0 0 0' to='0 360 0' dur='10000'
+                                     repeat='indefinite' easing='linear'></a-animation>
+                        <a-entity obj-model='obj: #tree-obj; mtl: #tree-mtl' position='0 0 0' rotation='0 0 0'
+                                  shadow='receive: true' scale='1.5 1.5 1.5'></a-entity>
+                    </a-entity>
                 </a-entity>
-            </a-entity>
-        <!--</a-anchor>-->
-    </a-marker>
+            <!--</a-anchor>-->
+        </a-marker>
 
-
+    </a-anchor>
 
     <a-camera-static/>
 </a-scene>
-<script>
-    // self executing function here
+<!--<script>
     (function() {
-        // your page initialization code here
-        // the DOM will be available here
         console.log("BEFORE DETECT");
         var artoolkitMarkerHiro = new THREEx.ArMarkerControls(arToolkitContext, knownPositionMesh, {
             type : 'pattern',
             patternUrl : ARjs.Context.baseURL + '../data/data/patt.hiro'
-            // patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji',
         });
         console.log("START DETECT...");
         artoolkitMarkerHiro.addEventListener('markerFound', function(event){
-            // deadReckoningControls.setKnownPose(knownPositionMesh.position, knownPositionMesh.quaternion, knownPositionMesh.scale)
-            // alert("DETECT HIRO!")
             console.log("DETECT HIRO!")
         });
     })();
-</script>
+</script>-->
 </body>
