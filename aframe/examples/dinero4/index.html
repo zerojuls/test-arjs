@@ -1,7 +1,7 @@
 <head>
     <meta charset="UTF-8"/>
     <link rel="shortcut icon" href="https://cdn3-marcas.belcorp.biz/favicon.ico"/>
-    <title>Cyzone 4.25</title>
+    <title>Cyzone 4.26</title>
     <script src='../vendor/aframe/build/aframe.min.js'></script>
     <script src='../../build/aframe-ar.js'></script>
     <script>ARjs.Context.baseURL = '../../../three.js/'</script>
@@ -106,7 +106,7 @@
 <body style='margin : 0px; overflow: hidden;'>
 
 <div id="page" style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
-    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> - Dinero 4.25 - <a href="https://zerojuls.github.io/test-arjs/aframe/examples/dinero/" >Recargar</a>
+    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> - Dinero 4.26 - <a href="https://zerojuls.github.io/test-arjs/aframe/examples/dinero/" >Recargar</a>
 </div>
 
 <div id="loading"></div>
@@ -146,30 +146,8 @@
         <a-asset-item id='clock-mtl' src='models/little-fox/clock/Clock_obj.mtl'></a-asset-item>
     </a-assets>
 
-    <!--<a-anchor >
-
-        <a-entity id="logo" scale='0.8 0.8 0.8'>
-            <a-entity position='0 0 0'  rotation='0 0 0'>
-                <a-animation attribute='rotation' from='0 0 0' to='0 360 0' dur='10000'
-                             repeat='indefinite' easing='linear'></a-animation>
-                <a-entity obj-model='obj: #tree-obj; mtl: #tree-mtl' position='0 0 0' rotation='0 0 0'
-                          shadow='receive: true' scale='1.5 1.5 1.5'></a-entity>
-            </a-entity>
-
-        </a-entity>
-
-    </a-anchor>-->
-
     <!-- handle kanji marker -->
-    <!--<a-marker preset='kanji'>
-        <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:green;'>
-            <a-torus-knot radius='0.26' radius-tubular='0.05'>
-                <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
-            </a-torus-knot>
-        </a-box>
-    </a-marker>-->
     <a-marker preset='kanji'>
-        <!--<a-anchor >-->
         <a-entity id="logo" scale='0.8 0.8 0.8'>
             <a-entity position='0 0 0'  rotation='0 0 0'>
                 <a-animation attribute='rotation' from='0 0 0' to='0 360 0' dur='10000'
@@ -178,28 +156,18 @@
                           shadow='receive: true'></a-entity>
             </a-entity>
         </a-entity>
-        <!--</a-anchor>-->
     </a-marker>
 
     <!-- handle hiro marker -->
-    <!--<a-marker preset='hiro'>
-        <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:red;'>
-            <a-torus-knot radius='0.26' radius-tubular='0.05'>
-                <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
-            </a-torus-knot>
-        </a-box>
-    </a-marker>-->
     <a-marker preset='hiro'>
-        <!--<a-anchor >-->
         <a-entity id="logo" scale='0.8 0.8 0.8'>
             <a-entity position='0 0 0'  rotation='0 0 0'>
                 <a-animation attribute='rotation' from='0 0 0' to='0 360 0' dur='10000'
                              repeat='indefinite' easing='linear'></a-animation>
-                <a-entity obj-model='obj: #tree-obj; mtl: #tree-mtl' position='0 0 0' rotation='0 0 0'
-                          shadow='receive: true' scale='1.5 1.5 1.5'></a-entity>
+                <!--<a-entity obj-model='obj: #tree-obj; mtl: #tree-mtl' position='0 0 0' rotation='0 0 0'
+                          shadow='receive: true' scale='1.5 1.5 1.5'></a-entity>-->
             </a-entity>
         </a-entity>
-        <!--</a-anchor>-->
     </a-marker>
 
 
