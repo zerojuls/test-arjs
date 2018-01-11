@@ -1,9 +1,13 @@
 <head>
 	<meta charset="UTF-8"/>
 	<link rel="shortcut icon" href="https://cdn3-marcas.belcorp.biz/favicon.ico"/>
-    <title>Cyzone 4.8</title>
+    <title>Cyzone 4.9</title>
     <script src='../vendor/aframe/build/aframe.min.js'></script>
+
     <script src='../../src/component-anchor.js'></script>
+    <script src="../../src/system-arjs.js"></script>
+    <script src="../../src/component-hit-testing.js"></script>
+
     <script>ARjs.Context.baseURL = '../../../three.js/'</script>
     <script src='src/aframe-shadow-plane.js'></script>
 
@@ -105,7 +109,7 @@
 <body style='margin : 0px; overflow: hidden;'>
 
 <div id="page" style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
-    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> - Dinero 4.8  - <a href="https://zerojuls.github.io/test-arjs/aframe/examples/dinero/" >Recargar</a>
+    <a href='https://www.cyzone.com' target='_blank'>Cyzone</a> - Dinero 4.9  - <a href="https://zerojuls.github.io/test-arjs/aframe/examples/dinero/" >Recargar</a>
 </div>
 
 <div id="loading"></div>
@@ -159,7 +163,7 @@ onReady(function () {
 
     </a-anchor>-->
 
-    <a-anchor >
+    <a-anchor hit-testing-enabled='true'>
         <!-- handle kanji marker -->
         <!--<a-marker preset='kanji'>
             <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:green;'>
