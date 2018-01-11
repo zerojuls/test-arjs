@@ -8259,6 +8259,7 @@ AFRAME.registerComponent('arjs-anchor', {
             if(_this.el.object3D.visible) {
 			    this.el.emit('markerFound');//TODO: Detection event recognize marker added
 			    console.log('detect!!!');
+			    console.log(_this.data.preset);
 			    console.log(_this.el)
 			}
 		}else if( _this._arAnchor.parameters.changeMatrixMode === 'cameraTransformMatrix' ){
