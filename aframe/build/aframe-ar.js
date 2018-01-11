@@ -8260,7 +8260,7 @@ AFRAME.registerComponent('arjs-anchor', {
 			    this.el.emit('markerFound');//TODO: Detection event recognize marker added
 			    if(_this.data.preset === 'kanji') {
 			        console.log('Redirect!!!');
-                    window.location.href = "http://stackoverflow.com";
+                    window.location.href = "http://internovam.com";
                     // event.preventDefault();
                     return
 			    }
