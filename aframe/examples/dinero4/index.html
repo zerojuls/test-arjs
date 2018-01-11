@@ -198,15 +198,17 @@ onReady(function () {
 </a-scene>
 <!--<script type="application/javascript">-->
 <script>
+    console.log("BEFORE DETECT");
     var artoolkitMarkerHiro = new THREEx.ArMarkerControls(arToolkitContext, knownPositionMesh, {
         type : 'pattern',
         patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.hiro'
         // patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji',
     });
-
+    console.log("START DETECT...");
     artoolkitMarkerHiro.addEventListener('markerFound', function(event){
         // deadReckoningControls.setKnownPose(knownPositionMesh.position, knownPositionMesh.quaternion, knownPositionMesh.scale)
-        alert("DETECT HIRO!")
+        // alert("DETECT HIRO!")
+        console.log("DETECT HIRO!")
     });
 </script>
 </body>
